@@ -137,8 +137,8 @@ pre_install_docker_compose(){
 
     # Set caddy cloudflare ddns email
     echo "cloudflare email for tls (optional)"
-    read -p "(Default v2rayV3@test.com):" cloudflare_email
-    [ -z "${cloudflare_email}" ]  && cloudflare_email="v2rayV3@test.com"
+    read -p "(Default kisusan@test.com):" cloudflare_email
+    [ -z "${cloudflare_email}" ]  && cloudflare_email="kisusan@test.com"
     echo
     echo "---------------------------"
     echo "cloudflare_email = ${cloudflare_email}"
@@ -331,7 +331,7 @@ config_docker(){
     echo "install curl"
     install_dependencies
     echo "Writing docker-compose.yml"
-    curl -L https://raw.githubusercontent.com/v2rayv3/pay-v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/V2ray/docker-compose.yml > docker-compose.yml
+    curl -L https://raw.githubusercontent.com/Millenniunn/pay-v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/V2ray/docker-compose.yml > docker-compose.yml
     sed -i "s|node_id:.*|node_id: ${ssrpanel_node_id}|"  ./docker-compose.yml
     sed -i "s|sspanel_url:.*|sspanel_url: '${ssrpanel_url}'|"  ./docker-compose.yml
     sed -i "s|LDNS:.*|LDNS: '${LDNS}'|"  ./docker-compose.yml
@@ -358,9 +358,9 @@ config_caddy_docker(){
     cd ${cur_dir}
     echo "install curl"
     install_dependencies
-    curl -L https://raw.githubusercontent.com/v2rayv3/pay-v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/Caddyfile >  Caddyfile
+    curl -L https://raw.githubusercontent.com/Millenniunn/pay-v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/Caddyfile >  Caddyfile
     echo "Writing docker-compose.yml"
-    curl -L https://raw.githubusercontent.com/v2rayv3/pay-v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/docker-compose.yml > docker-compose.yml
+    curl -L https://raw.githubusercontent.com/Millenniunn/pay-v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/docker-compose.yml > docker-compose.yml
     sed -i "s|node_id:.*|node_id: ${ssrpanel_node_id}|"  ./docker-compose.yml
     sed -i "s|LDNS:.*|LDNS: '${LDNS}'|"  ./docker-compose.yml
     sed -i "s|sspanel_url:.*|sspanel_url: '${ssrpanel_url}'|"  ./docker-compose.yml
@@ -393,9 +393,9 @@ config_caddy_docker_cloudflare(){
     echo "install curl first "
     install_dependencies
     echo "Starting Writing Caddy file and docker-compose.yml"
-    curl -L https://raw.githubusercontent.com/v2rayv3/pay-v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/Caddyfile >Caddyfile
+    curl -L https://raw.githubusercontent.com/Millenniunn/pay-v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/Caddyfile >Caddyfile
     epcho "Writing docker-compose.yml"
-    curl -L https://raw.githubusercontent.com/v2rayv3/pay-v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/docker-compose.yml >docker-compose.yml
+    curl -L https://raw.githubusercontent.com/Millenniunn/pay-v2ray-sspanel-v3-mod_Uim-plugin/master/Docker/Caddy_V2ray/docker-compose.yml >docker-compose.yml
     sed -i "s|node_id:.*|node_id: ${ssrpanel_node_id}|"  ./docker-compose.yml
     sed -i "s|LDNS:.*|LDNS: '${LDNS}'|"  ./docker-compose.yml
     sed -i "s|sspanel_url:.*|sspanel_url: '${ssrpanel_url}'|"  ./docker-compose.yml

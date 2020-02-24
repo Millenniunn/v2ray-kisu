@@ -70,7 +70,7 @@ then
 fi
 if [ ! -z "${CF_Email}" ]
 then
-  sed -i "s|\"v2rayV3@test.com\"|\"${CF_Email}\"|g" "/etc/v2ray/config.json"
+  sed -i "s|\"kisusan@test.com\"|\"${CF_Email}\"|g" "/etc/v2ray/config.json"
 
 fi
 
