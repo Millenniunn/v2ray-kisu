@@ -5,7 +5,7 @@ ENV v2ray_version=4.20.0
 
 RUN apt-get update
 RUN apt-get install curl -y
-RUN curl -L -o /tmp/go.sh https://raw.githubusercontent.com/Millenniunn/pay-v2ray-sspanel-v3-mod_Uim-plugin/master/install-release.sh
+RUN curl -L -o /tmp/go.sh https://raw.githubusercontent.com/Millenniunn/v2ray-kisu/master/install-release.sh
 RUN chmod +x /tmp/go.sh
 COPY v2ray.zip /tmp/
 RUN /tmp/go.sh  --local /tmp/v2ray.zip --panelurl https://google.com --panelkey 55fUxDGFzH3n --nodeid 123456 \
